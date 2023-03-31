@@ -1,6 +1,6 @@
 Name:		texlive-biblatex-cv
 Version:	59433
-Release:	1
+Release:	2
 Summary:	Create a CV from BibTeX files
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-cv

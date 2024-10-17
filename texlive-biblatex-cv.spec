@@ -3,7 +3,7 @@ Version:	59433
 Release:	2
 Summary:	Create a CV from BibTeX files
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-cv
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-cv
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-cv.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-cv.doc.r%{version}.tar.xz

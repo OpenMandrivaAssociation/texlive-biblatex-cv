@@ -1,37 +1,24 @@
-Name:		texlive-biblatex-cv
-Version:	59433
-Release:	2
+%global tl_name biblatex-cv
+%global tl_revision 59433
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.01
+Release:	%{tl_revision}.1
 Summary:	Create a CV from BibTeX files
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-cv
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-contrib/biblatex-cv
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-cv.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-cv.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-cv.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-cv.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package creates an academic curriculum vitae (CV) from a
-BibTeX .bib file. The package makes use of BibLaTeX/biber to
-automatically format, group, and sort the entries on a CV.
+This package creates an academic curriculum vitae (CV) from a BibTeX
+.bib file. The package makes use of BibLaTeX/biber to automatically
+format, group, and sort the entries on a CV.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/biblatex-cv
-%doc %{_texmfdistdir}/doc/latex/biblatex-cv
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
